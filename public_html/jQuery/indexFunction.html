@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <ul>
+                <div class="test"></div>
+                <li id="foo1">foo</li>
+                <li id="bar1" class="test">bar</li>
+                <li id="baz1">baz</li>
+                <div class="test"></div>
+            </ul>
+            <div id="last"></div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function () {
+
+            // Sets up click behavior on all button elements with the alert class
+            // that exist in the DOM when the instruction was executed
+            $("#foo1").on("click", function (evento) {
+                console.log("Click en foo1!");
+                evento.stopPropagation();
+            });
+            
+            $("body").on("click", function (evento) {
+                console.log("click en el body!");
+               
+
+            });
+
+            // Now create a new button element with the alert class. This button
+            // was created after the click listeners were applied above, so it
+            // will not have the same click behavior as its peers
+            $("<button class='alert'>Alert!</button>").appendTo(document.body);
+        });
+    </script>
+</html>
