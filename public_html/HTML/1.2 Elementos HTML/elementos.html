@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Elementos HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1>Elementos HTML</h1></div>
+            </div>
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">figure</div>
+                    <div class="panel-body">
+                        <figure class="center">
+                            <img class="img-responsive" src="http://placehold.it/350x150" alt="Macaque in the trees">
+                            <figcaption>
+                                Una imagen de 350 pixels de ancho y 150 de alto. Incrustada desde <a target="_blank" href="http://placehold.it">Placehold</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Figure con varias imágenes</div>
+                    <div class="panel-body">
+                        <figure>                         
+                            <img class="col-xs-4" src="http://placehold.it/350x150" alt="Kooaburra">
+                            <img class="col-xs-6" src="http://placehold.it/400x150" alt="Pelican stood on the beach">
+                            <img class="col-xs-2" src="http://placehold.it/50x50" alt="Cheeky looking Rainbow Lorikeet">
+                            <div class="clearfix"></div>
+                            <figcaption>Varias imágenes en un elemento figure con un figurecaption común</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Figure para un bloque de texto o código</div>
+                    <div class="panel-body">
+                        <figure>
+                            <blockquote>
+                                <p>
+                                    <code>
+                                        &lt;small&gt; <br/>
+                                        &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;Creative Commons Attribution Share-alike license&lt;/a&gt;<br/>
+                                        &lt;/small&gt;<br/>
+                                    </code>
+                                </p>
+                            </blockquote>
+                            <figcaption>Usando código dentro de figure</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Elementos Data y time</div>
+                    <div class="panel-body">
+                        <h3>Libros mas Vendidos</h3>
+                        <p><data value="978-92-95255-02-5">Libro 1</data></p>
+                        <p><data value="978-92-92635-04-7">Libro 2</data></p>
+                        <p><data value="978-92-94635-23-2">Libro 3</data></p>
+                        <p>Última actualización <time datetime="2016-08-04 20:00"> hace 4 días</time></p>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Elemento Mark</div>
+                    <div class="panel-body">
+
+                        <p>Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. <mark>Nam bibendum</mark>. In nulla tortor, elementum vel, tempor at, varius non, purus. <mark>Mauris vitae nisl nec metus placerat consectetuer.</mark> Donec ipsum.</p>
+                        <p>Última actualización <time datetime="2016-08-04 20:00"> hace 4 días</time></p>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Elemento wbr</div>
+                    <div class="panel-body">
+                        <h1>Párrafo normal</h1>
+                        <p>http://www.google.com/profundidad_uno/profundidad_dos/profundidad_tres/profundidad_cuatro/profundidad_cinco/profundidad_seis/pages/index.html</p>
+
+                        <h1>Linea definida estilo break-all</h1>
+                        <p style="word-break: break-all;">http://www.google.com/profundidad_uno/profundidad_dos/profundidad_tres/profundidad_cuatro/profundidad_cinco/profundidad_seis/pages/index.html</p>
+
+                        <h1>Linea definida estilo break-word</h1>
+                        <p style="word-break: break-word">http://www.google.com/profundidad_uno/profundidad_dos/profundidad_tres/profundidad_cuatro/profundidad_cinco/profundidad_seis/pages/index.html</p>
+
+                        <h1>Linea definida word break</h1>
+                        <p>http://www.google.com<wbr>/profundidad_uno<wbr>/profundidad_dos<wbr>/profundidad_tres<wbr>/profundidad_cuatro<wbr>/profundidad_cinco<wbr>/profundidad_seis<wbr>/index.html</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>
