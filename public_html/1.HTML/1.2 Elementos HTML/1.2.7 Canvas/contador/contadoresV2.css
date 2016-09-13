@@ -1,0 +1,247 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-jul-2015, 13:50:14
+    Author     : 0011188
+*/
+
+body{
+    text-align: center;
+}
+
+button.botonMenos,  button.botonMas {
+    border: 1px solid #999;
+    background-color: #FFF;
+    font-size: 26px;
+    width: 32px;
+    height: 32px;
+    /* float:left; */
+    /* margin: 10px 0; */
+    /* min-width: 30px; */
+    /* display: table; */
+    margin: 18px 0px;
+    color: #000;
+    LINE-HEIGHT: 29px;
+}
+
+
+button.botonMenos{ float: right; margin-right: 0px;}
+button.botonMas { /* float: right; */ margin-left: 14px;}
+.barraDatos {
+    width: 47%;
+    float: left;
+    /* background-color: red; */
+    height: 23px;
+    margin: 22px 5px;
+    /* border-bottom: 2px solid #000; */
+    text-align: center;
+    border-style: solid;
+    border-width: 0px 2px 0px 2px;
+    border-color: #999999;
+}
+
+div.barContainer{
+    float: left;
+    width: 100%;
+    /* background-color: #EEE; */
+    position: relative;
+    /* min-width: 400px; */
+    /* text-align: center; */
+    margin: 0px auto;
+    display: block;
+    text-align: center;/* evitar que se seleccione al arrastrar el ratÃ³n */
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    padding: 0px 0px;
+}
+
+.barraConsumo {
+    background-color: #5dabfc;
+    width: 48%;
+    height: 23px;
+    max-width: 100%;
+    float: left;
+}
+
+.areaMaximaConsumo {
+    border-bottom: 2px solid #999999;
+    height: 11px;
+}
+
+.textoConsumo{
+    float: left;
+    position: relative;
+    top: -18px;
+    color:black;
+    font-family: arial,tahoma;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.textoConsumo span{
+    font-size: 65%;
+}
+
+.icolimite {
+    background: url(prohibidoSinMarca.png) no-repeat center -1px transparent;
+    width: 38px;
+    background-size: 25px;
+    position: relative;
+    top: 0px;
+    height: 34px;
+    left: -9px;
+    padding-top: 25px;
+    font-size: 11px;
+    float: left;
+}
+
+.textoTelefono{
+    float: left;
+    margin: 22px 5px;
+    color: #999999;
+}
+
+div.leyenda {
+    width: 100%;
+    height: 30px;
+    /* border: 1px solid; */
+}
+
+.leyenda .minimo {
+    float: left;
+    left: -43px;
+    position: relative;
+    padding-top: 10px;
+    color: #999;
+}
+
+.leyenda .maximo {
+    float: right;
+    color: #999;
+    right: -6px;
+    position: relative;
+    top: 10px;
+}
+
+/* *********************   displayBarraContainer ************ */
+
+
+.displayBarraContainer{
+    float: left;
+    width: 100%;
+    /* background-color: #EEE; */
+    position: relative;
+    /* min-width: 400px; */
+    /* text-align: center; */
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    padding: 0px 0px;
+}
+
+
+.displayBarraContainer .barraMaximoConsumo {
+    border: none;
+    height: 100%;
+    background-color: #999;
+    width: 100%;
+    /* display: none; */
+}
+
+.barraTotalBucket {
+    width: 66%;
+    float: left;
+    background-color: no;
+    height: 21px;
+    margin: 22px 5px;
+    /* border-bottom: 2px solid #000; */
+    text-align: center;
+    /* border-style: solid; */
+    /* border-width: 0px 2px 0px 2px; */
+    /* border-color: #999999; */
+}
+.barraConsumoPermitido{
+    background-color: #EAEAEA;
+    display: block;
+    height: 100%;
+    float: left;
+    left: 0px;
+    position: relative;
+    background-size: contain;
+}
+.barraConsumoActual{
+    background-color: #ff7a01;
+    display: block;
+    height: 100%;
+    /* float: left; */
+    left: 0px;
+    position: relative;
+}
+
+.displayBarraContainer  .textoConsumo{
+    margin-left: 9px;
+}
+
+.displayBarraContainer .textoLimite{
+    background: url(prohibidoSinMarca.png) no-repeat top right rgba(0, 0, 0, 0);
+    background-size: contain;
+    /* height: 7px; */
+    width: 22px;
+    /* left: 100%; */
+    /* position: relative; */
+    /* z-index: 999; */
+    float: right;
+    padding-top: 21px;
+    text-align: center;
+    font-size: 11px;
+    color: red;
+}
+
+.displayBarraContainer .leyenda .minimo{
+    float: left;
+    left: -94px;
+    position: relative;
+    padding-top: 3px;
+    color: #999;
+}
+
+
+/*** ************************** BUCKET CIRCULAR                   **  */
+.relleno {
+    color: #ff8700;
+    height: 100%;
+    width: 100%;
+    background-color: #ff8700;
+    margin-top: 0%;
+}
+.bucketCircular{
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    margin: 0 auto;
+}
+
+div.bucketCircular p.consumido{
+    float: left;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 38%;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 16px;
+}
+div.bucketCircular p.consumido span {
+    font-size: 17px;
+}

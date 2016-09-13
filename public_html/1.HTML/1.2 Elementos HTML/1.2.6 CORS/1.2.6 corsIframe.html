@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>CORS</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="../../../includes/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../includes/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1>Carga de contenidos de distinto origen</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Alt</div>
+                        <div class="panel-body">
+                            <h2>Carga de wikipedia en iframe</h2>
+                            <p> Carga porque no se recibe cabecera x-frame-options:SAMEORIGIN</p>
+                            
+                            <iframe style="width: 100%; height: 250px" id="frameWiki" src="http://www.wikipedia.org" ></iframe>
+                            <br>
+                            <button onclick="accederAIframe('frameWiki')" class="btn btn-default">Acceder al contenido del iframe</button>
+                            <h2>Carga de google en iframe</h2>
+                            <p> No carga porque google.com devuelve la cabecera x-frame-options:SAMEORIGIN</p>
+                            <iframe style="width: 100%; height: 250px" src="http://www.google.com" ></iframe>
+                            
+                            <iframe id="frameMicro" style="width: 100%; height: 250px" src="../../1.2%20Elementos%20HTML/1.2.4%20Atributos%20y%20microdatos/microdatos.html" ></iframe>
+                            <br>
+                            <button onclick="accederAIframe('frameMicro')" class="btn btn-default">Acceder al contenido del iframe</button>
+
+                            <script>
+                                //llamadas AJAX, comprobar los errores en consola
+                                request = new XMLHttpRequest;
+                                request.open('GET', 'http://www.wikipedia.org', true);
+                                request.send();
+
+                                request = new XMLHttpRequest;
+                                request.open('GET', 'http://www.google.com/', true);
+                                request.send();
+
+                                function accederAIframe(id) {
+                                    try {
+                                        var miframe = document.getElementById(id).contentDocument;
+                                        
+                                        miframe.getElementsByTagName("h2")[0].innerHTML="ELEMENTO H2 MODIFICADO" + Date();
+                                        
+                                        
+                                    } catch (err) {
+                                        alert(err.message);
+                                    }
+                                }
+
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="js/funciones.js" type="text/javascript"></script>
+    </body>
+
+</html>
+

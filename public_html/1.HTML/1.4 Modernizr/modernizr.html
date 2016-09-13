@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>Atributos en HTML</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+
+
+        <script src="modernizr-custom.js" type="text/javascript"></script>
+
+        <!-- Latest compiled and minified CSS -->
+
+        <link href="../../includes/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Optional theme -->
+        <link href="../../includes/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../includes/js/jquery.js" type="text/javascript"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../../includes/js/bootstrap.min.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1> Modernizr </h1></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Soporte navegador</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12" id="info">
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+
+            function anadirPropiedad(texto) {
+                var nodo = document.getElementById("info");
+                var textnode = document.createTextNode(texto);                  // Create a text node
+                nodo.appendChild(textnode);
+                nodo.appendChild(document.createElement('br'));// Append the text to <li>
+                //document.getElementById("info").appendChild(nodo);
+            }
+
+            if (Modernizr.geolocation) {
+                anadirPropiedad("Geolocalización ON");
+            } else {
+                anadirPropiedad("Geolocalización OFF");
+            }
+            if (Modernizr.json) {
+                anadirPropiedad(" JSON ON");
+            } else {
+                anadirPropiedad(" JSON OFF");
+            }
+            if (Modernizr.video) {
+                anadirPropiedad("video ON");
+            } else {
+                anadirPropiedad("video OFF");
+            }
+
+            if (Modernizr.websockets) {
+                anadirPropiedad(" websockets ON");
+            } else {
+                anadirPropiedad(" websockets OFF");
+            }
+
+
+
+        </script>
+    </body>
+
+</html>
+

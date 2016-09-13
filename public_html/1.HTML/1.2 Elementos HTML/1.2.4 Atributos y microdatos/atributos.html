@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>Atributos en HTML</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Latest compiled and minified CSS -->
+        
+        <link href="../../../includes/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Optional theme -->
+        
+        <link href="../../../includes/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Latest compiled and minified JavaScript -->
+        
+        <script src="../../../includes/js/bootstrap.min.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1>Atributos HTML</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Alt</div>
+                        <div class="panel-body">
+                            <figure class="center">
+                                <img class="img-responsive" src="http://placehqold.it/350x150" alt="Imagen del la torre Eiffel">
+                                <figcaption>
+                                    Una imagen con error de carga, usa el atributo alt. La visualización cambia con cada navegador.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Atajos de teclado</div>
+                        <div class="panel-body">
+                            <button type="button" name="Boton 1" accesskey="q" onclick="alert('Pulsado ' + this.name)">Boton 1 (q)</button>
+                            <button type="button" name="Boton 2" accesskey="w" onclick="alert('Pulsado ' + this.name)">Boton 2 (w)</button>
+                            <button type="button" name="Boton 3" accesskey="t" onclick="alert('Pulsado ' + this.name)">Boton 1 (t)</button>
+                            <input accesskey="i" placeholder="pulsa Alt + i para acceder">
+                            <h3> Atajos segun navegador</h3>
+                            <div class="table-responsive">
+                                <table class=" table table-bordered" >
+                                    <tbody><tr>
+                                            <th >Browser</th>
+                                            <th >Windows</th>
+                                            <th >Linux</th>
+                                            <th >Mac</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Internet Explorer</td>
+                                            <td>[Alt] + <em>accesskey</em></td>
+                                            <td>N/A</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chrome</td>
+                                            <td>[Alt] + <em>accesskey</em></td>
+                                            <td>[Alt] + <em>accesskey</em></td>
+                                            <td>[Control] [Alt] + <em>accesskey</em></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firefox</td>
+                                            <td>[Alt] [Shift] + <em>accesskey</em></td>
+                                            <td>[Alt] [Shift] + <em>accesskey</em></td>
+                                            <td>[Control] [Alt] + <em>accesskey</em></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Safari</td>
+                                            <td>[Alt] + <em>accesskey</em></td>
+                                            <td>N/A</td>
+                                            <td>[Control] [Alt] + <em>accesskey</em></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Opera</td>
+                                            <td colspan="3">Opera 15 or newer: [Alt] + <em>accesskey<br></em>Opera 12.1 or older: [Shift] [Esc] + <em>accesskey</em></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Uso de atributos data-*</div>
+                        <div class="panel-body">
+                            <ul >
+                                <li class="libro" data-isbn="978-92-95255-02-5" data-titulo="Desarrollo web ágil on ángular">Libro 1</li>
+                                <li class="libro" data-isbn="978-92-92635-04-7" data-titulo="Manual de Photoshop">Libro 2</li> 
+                                <li class="libro" data-isbn="978-92-94635-23-2" data-titulo="HTML5">Libro 3</li>                               
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">download</div>
+                        <div class="panel-body">
+
+                            <a href="images/portada_ebook.jpg">Ver imágen Libro 1</a>
+                            <br/>
+                            <a href="images/portada_ebook.jpg" download>Descargar imagen Libro 1 ( no soportado por Mozilla. EI, ni Safari )</a>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">draggable</div>
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-2">
+                                    <img class="img-responsive" draggable="true" src="images/portada_ebook.jpg" alt="Desarrollo web ágil con Angular"/> 
+                                </div>
+                                <div class="col-xs-8">
+                                    <p> imagen arrastrable con el atributo <i>draggable</i>.   </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-2">
+                                    <img class="img-responsive " draggable="false" src="images/portada_ebook.jpg" alt="Desarrollo web ágil con Angular"/> 
+                                </div>
+                                <div class="col-xs-8">
+                                    <p> imagen no arrastrable con el atributo <i>draggable=false</i>.   </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">multiple</div>
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p> El atributo multiple apliccado a un input o select permite seleccionar mas de un elemento </p>
+                                    <select multiple="multiple">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="opel">Opel</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <form action="#">
+                                        Selecionar archivos: <input type="file" name="img" multiple>
+                                        <button class="btn btn-primary " type="submit">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">novalidate</div>
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <form action="#">
+                                        <div class="form-group">
+                                            <p> Formulario </p>
+                                            <label for="nombre" >Nombre</label>
+                                            <input class="form-control" type="text" required name="nombre" placeholder="Campo nombre requerido">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-6">
+                                    <form action="#" novalidate="">
+                                        <div class="form-group">
+                                            <p> Formulario con el atributo novalidate </p>
+                                            <label for="nombre" >Nombre</label>
+                                            <input class="form-control" type="text" required name="nombre" placeholder="Campo nombre requerido">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">pattern</div>
+                        
+                        <div class="panel-body">
+                            <p> La contRaseña se valida mediante la expresion regular (?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}</p>
+                            <form action="demo_form.asp">
+                                Contraseña <input required type="password" name="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un numero, una mayúscula y una minúscula, al menos 8 o mas caracteres">
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Contenido editable y spellchecking</div>
+                        
+                        <div class="panel-body">
+                            <p>Los navegadores puede tener diferente comportamiento en cómo gestionan <i>spellchecking</i> en combinacion con el atributo lang. Normalmente se aplica el lenguaje definido en el navegador, no en el documento html.</p>
+                            <p>En Mozilla es necesario teenr instalado el correspondinte diccionario.</p>
+                            <h3>Contenido editable</h3>
+                            <p lang="es" contenteditable="true" spellcheck="true"> Para ofrecer la mejor experiencia posible, los navegadores para móviles muestran la página con el ancho de una pantalla de ordenador (normalmente, 980 píxeles, aunque este tamaño varía según el dispositivo) y, a continuación, intentan mejorar el aspecto aumentando las fuentes y escalando el contenido para ajustarlo a la pantalla. Al usar el valor de metaetiqueta  width=device-width para la ventana gráfica, se indica a la página que el ancho de la pantalla debe coincidir con los píxeles independientes del dispositivo. Esto permite a la página volver a procesar el contenido para que coincida con distintos tamaños de pantalla, ya sea en la pantalla pequeña de un teléfono móvil o en la pantalla grande de un monitor. </p>
+                            <p lang="en" contenteditable="true" spellcheck="true">The lang global attribute participates in defining the language of the element, the language that is non-editable elements are written in or the language that the editable elements should be written in. The tag contains one single entry value in the format defined in the Tags for Identifying Languages (BCP47) IETF document. If the tag content is the empty string the language is set to unknown; if the tag content is not valid, regarding BCP47, it is set to invalid.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="js/funciones.js" type="text/javascript"></script>
+    </body>
+
+</html>
+

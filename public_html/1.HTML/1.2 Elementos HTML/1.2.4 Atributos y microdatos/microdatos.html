@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>Atributos en HTML</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Latest compiled and minified CSS -->
+        <link href="../includes/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Optional theme -->
+        <link href="../includes/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../includes/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1>Evento</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Póximo Evento</div>
+                        <div class="panel-body">
+                            <div itemscope="" itemtype="http://schema.org/MusicEvent">
+                                <div itemprop="location" itemscope="" itemtype="http://schema.org/MusicVenue">
+                                    <p itemprop="name" content="Teatro de Cáceres">Teatro de Cáceres</p>
+                                    <link itemprop="sameAs" href="https://es.wikipedia.org/wiki/Gran_Teatro_de_C%C3%A1ceres"/>
+                                    <meta itemprop="address" content="Calle San Antón, 0, 10003 Cáceres"/>
+                                </div>
+                                <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                    <link itemprop="url" href="http://www.entradas.com/Entradas.html?affiliate=EES&doc=artistPages%2Ftickets&fun=artist&action=tickets&erid=1720825&includeOnlybookable=true&xtmc=gran_teatro_caceres&xtnp=1&xtcr=4" />
+                                    <meta itemprop="price" content="11"/>
+                                    <meta itemprop="priceCurrency" content="EUR" />
+                                    <link itemprop="availability" href="http://schema.org/InStock"/>
+                                </div>
+                                <h2 itemprop="name">Elektra</h2>
+                                <div>
+                                    <div itemprop="startDate" content="2016-12-07T20:00">07<span>diciembre</span>. 8:00 PM</div>
+                                    <meta itemprop="endDate" content="2016-12-19T20:00"/>
+                                    <div></div>
+                                    <div itemprop="performer" itemscope="" itemtype="http://schema.org/Person">
+                                        <strong itemprop="name" >Britten, Shostakovich</strong>
+                                    </div>
+                                </div>
+                            </div> 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Evento musical</div>
+                                <div class="panel-body">
+                                    Item evento musical: <a href="http://schema.org/MusicEvent">http://schema.org/MusicEvent</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Espacio musical</div>
+                                <div class="panel-body">
+                                    Item espacio musical: <a href="http://schema.org/MusicVenue">http://schema.org/MusicVenue</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Oferta   </div>
+                                <div class="panel-body">
+                                    Oferta: <a href="http://schema.org/Offer">http://schema.org/Offer</a>
+                                    <p>Una oferta para transferir derechos, algo físico o proporcionar algun servicio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 well">
+
+                    <h5>Jane Doe</h5>
+                    <img src="images/person-flat.png" alt="Photo of Jane Joe"/>
+                    <br/>
+                    <i>Professor</i>
+                    <ul>
+                        <li>20341 Whitworth Institute</li>
+                        <li>405 Whitworth</li>
+                        <li>Seattle WA 98052</li>
+                    </ul>
+                    <p>(425) 123-4567</p>
+                    <p><a href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a></p>
+
+                    <p>Jane's home page:
+                        <a href="http://www.janedoe.com">janedoe.com</a>
+                    </p>
+                    <p>Graduate students:
+                        <a href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
+                        <a href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
+                    </p>
+                </div>
+                <div class="col-sm-6 well" itemscope="" itemtype="http://schema.org/Person">
+
+                    <h5 itemprop="name">Jane Doe</h5>
+                    <img itemprop="image" src="images/person-flat.png" alt="Photo of Jane Joe"/>
+                    <br/>
+                    <i itemprop="jobTitle">Professor</i>
+                    <ul itemscope="" itemtype="https://schema.org/PostalAddress">
+                            <li >20341 Whitworth Institute</li>
+                            <li > 405 Whitworth</li>
+                            <li>
+                                <span itemprop="addressLocality">Seattle</span> 
+                                <span itemprop="addressRegion">WA</span> 
+                                <span itemprop="postalCode">98052</span>
+                            </li>
+                    </ul>
+                    <p itemprop="telephone">(425) 123-4567</p>
+                    <p><a itemprop="email" href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a></p>
+                    <p>Jane's home page:
+                        <a itemprop="url" href="http://www.janedoe.com">janedoe.com</a></p>
+                    <p>Graduate students:
+                        <a itemprop="colleague" href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
+                        <a itemprop="colleague" href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="js/funciones.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>Atributos en HTML</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+        <!-- Latest compiled and minified CSS -->
+        <link href="../../../includes/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Optional theme -->
+        <link href="../../../includes/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+
+        <script src="../../../includes/js/jquery.js" type="text/javascript"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../../../includes/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <style>
+            #canvasTutorial{
+                // Si indicamos porcentaje se hace zoom del canvas lo que provoca errores al dibujar  width: 100%; 
+                background: url(pixel-grid.png) no-repeat 0 0;
+                cursor: crosshair;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ><h1>Canvas </h1></div>
+            </div>
+            <!-- Single button -->
+
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Primitivas Canvas</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <canvas id="canvasTutorial" 
+                                            onmousedown="pinta('ON', event)" 
+                                            onmouseup="pinta('OFF')" 
+                                            onmousemove="pintar(event)" 
+                                            width="500"
+                                            height="501" >
+                                        Su navegador no soporta Canvas
+                                    </canvas>
+                                </div>
+                            </div>
+                            <div class=row">
+
+                                <!-- Single button -->
+                                <div class="btn-group col-xs-12">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Primitivas <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a onclick="rectanguloRelleno()" href="#">Rectangulo relleno</a></li>
+                                            <li><a onclick="rectanguloVacio()" href="#">Rectangulo vacio</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a onclick="limpiarRectangulo()" href="#">Limpiar rectangulo</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Líneas <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a onclick="polilineaCerrada()" href="#">Polilinea Cerrada</a></li>
+                                            <li><a onclick="polilineaAbierta()" href="#">Polilínea abierta</a></li>
+                                            <li><a onclick="emoticono()" href="#">Emoticono</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Estilos <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a onclick="setGrosor(10)" href="#">Ancho linea 10</a></li>
+                                            <li><a onclick="setGrosor(20)" href="#">Ancho linea 20</a></li>
+                                            <li><a onclick="setGrosor(30)" href="#">Ancho linea 30</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a onclick="setColor('red')" href="#">Color Rojo</a></li>
+                                            <li><a onclick="setColor('green')" href="#">Color Verde</a></li>
+                                            <li><a onclick="setColor('blue')" href="#">Color Azul</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a onclick="setTrans(1)" href="#">Sin transparencia</a></li>
+                                            <li><a onclick="setTrans(0.5)" href="#">Transparencia 50%</a></li>
+                                            <li><a onclick="setTrans(0.25)" href="#">Transparencia 25%</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <button type="button" class="btn btn-default" onclick="paths()" >Paths</button>
+                                    <button type="button" class="btn btn-danger" onclick="limpiar()" >Limpiar</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            var canvas = document.getElementById("canvasTutorial");
+            var contexto = canvas.getContext("2d");
+            var pintando = false;
+            var ultimaPosicion = {x: 0, y: 0};
+            var esMozilla = /Mozilla/.test(navigator.userAgent);
+
+            function rectanguloRelleno() {
+                contexto.fillRect(301, 301, 100, 100);
+            }
+            ;
+
+            function rectanguloVacio() {
+                contexto.strokeRect(50, 50, 50, 50);
+            }
+            ;
+
+            function limpiarRectangulo() {
+                contexto.clearRect(101, 101, 300, 300);
+            }
+            ;
+
+            function limpiar() {
+                contexto.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            ;
+
+            function polilineaCerrada() {
+                contexto.beginPath();
+                // contexto.moveTo(250, 250);
+                // contexto.lineTo(250, 300);
+                contexto.moveTo(250, 300);
+                contexto.lineTo(200, 250);
+                contexto.lineTo(250, 200);
+                contexto.lineTo(300, 250);
+                //no es necesario cerrar la figura, fill() la cierra
+                contexto.fill();
+            }
+            ;
+
+            function polilineaAbierta() {
+                contexto.beginPath();
+                // contexto.moveTo(250, 250);
+                // contexto.lineTo(250, 300);
+                contexto.moveTo(250, 300);
+                contexto.lineTo(200, 250);
+                contexto.lineTo(250, 200);
+                contexto.lineTo(300, 250);
+                contexto.stroke();
+            }
+            ;
+
+            function emoticono() {
+                contexto.beginPath();
+                contexto.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+                contexto.moveTo(110, 75);
+                contexto.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+                contexto.moveTo(65, 65);
+                contexto.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+                contexto.moveTo(95, 65);
+                contexto.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+                contexto.stroke();
+            }
+
+            function paths() {
+                var rectangulo = new Path2D();
+                rectangulo.rect(10, 10, 50, 50);
+
+                var circulo = new Path2D();
+                circulo.moveTo(125, 35);
+                circulo.arc(100, 35, 25, 0, 2 * Math.PI);
+
+                var miEmoticono = new Path2D();
+                miEmoticono.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+                miEmoticono.moveTo(110, 75);
+                miEmoticono.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+                miEmoticono.moveTo(65, 65);
+                miEmoticono.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+                miEmoticono.moveTo(95, 65);
+                miEmoticono.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+
+
+                contexto.stroke(rectangulo);
+                //contexto.fill(circulo);
+                contexto.stroke(circulo);
+                contexto.stroke(miEmoticono);
+            }
+
+
+            function pintaPunto(evento) {
+
+                var x = evento.layerX;
+                var y = evento.layerY;
+
+                contexto.beginPath();
+                contexto.arc(x, y, 1, 0, 2 * Math.PI, true);
+                contexto.stroke();
+            }
+            ;
+
+            function pinta(accion, evento) {
+                if (accion === "ON") {
+                    pintando = true;
+                    ultimaPosicion = getXY(evento);
+                } else {
+                    pintando = false;
+                }
+            }
+            ;
+
+            function pintar(evento) {
+                if (pintando) {
+                    posicion = getXY(evento);
+                    contexto.beginPath();
+                    contexto.moveTo(ultimaPosicion.x, ultimaPosicion.y);
+                    contexto.lineTo(posicion.x, posicion.y);
+                    contexto.closePath();
+                    contexto.stroke();
+                    console.log("pintada linea de (" + ultimaPosicion.x + "," + ultimaPosicion.y + ") a (" + posicion.x + "," + posicion.y + ")");
+                    ultimaPosicion = {x: posicion.x, y: posicion.y};
+                }
+            }
+
+            function setGrosor(grosor) {
+                contexto.lineWidth = grosor;
+                contexto.lineJoin = "round";
+            }
+
+            function setColor(color) {
+                contexto.strokeStyle = color;
+            }
+
+            function setTrans(opacidad) {
+                contexto.globalAlpha = opacidad;
+            }
+
+            function getXY(evento) {
+                
+                //en mozilla obtenemos la posicion con offset
+                if (esMozilla) {
+                    var x = evento.offsetX;
+                    var y = evento.offsetY;
+
+                } else {
+                    var x = evento.layerX;
+                    var y = evento.layerY;
+                }
+                return {x: x, y: y};
+            }
+            ;
+        </script>
+    </body>
+
+</html>
+
